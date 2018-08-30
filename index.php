@@ -49,8 +49,8 @@
 	}
 
 	// Extract previously-selected Month and Year
-	$prevExpenseMonth= $prevSelections['prevExpenseMonth'];
-	$prevExpenseYear= $prevSelections['prevExpenseYear'];
+	//$prevExpenseMonth= $prevSelections['prevExpenseMonth'];
+	//$prevExpenseYear= $prevSelections['prevExpenseYear'];
 ?>
 
 <div class="intro">
@@ -63,44 +63,47 @@
 </div>
 
 <!-- Define web form. 
-The array $_POST is populated after the HTTP POST method.
+The array $_POST is populated after the HTTP POST method  value="<?php echo $prevExpenseYear;?>".  
 The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 <div class="container">
 	<form action="insertToDb.php" method="post">
 
 		<label>Employee Name ():</label>
-		<input type="text" step="1" name="employee_name" value="<?php;  ?>" required><br>
+		<input type="text" step="1" name="employee_name" required><br>
 		
 
 		<!-- Text input for year, remembering previously selected year -->
 		<label>Start Date (MM-DD-YYYY):</label>
-		<input type="text" step="1" name="start_date" value="<?php echo $prevExpenseYear;  ?>" required><br>
+		<input type="text" step="1" name="start_date" required><br>
 		
 		<label>End Date (MM-DD-YYYY):</label>
-		<input type="text" step="1" name="end_date" value="<?php echo $prevExpenseYear;  ?>" required><br>
+		<input type="text" step="1" name="end_date" required><br>
 		
 		<label>Vehicle Make ():</label>
-		<input type="text" step="1" name="vehicle_make" value="<?php echo $prevExpenseYear;  ?>" required><br>
+		<input type="text" step="1" name="vehicle_make" required><br>
 		
 		<label>Vehicle Model ():</label>
-		<input type="text" step="1" name="vehicle_model" value="<?php echo $prevExpenseYear;  ?>" required><br>
+		<input type="text" step="1" name="vehicle_model" required><br>
 		
 		<label>Licence Plate ():</label>
-		<input type="text" step="1" name="licence_plate" value="<?php echo $prevExpenseYear;  ?>" required><br>
+		<input type="text" step="1" name="licence_plate" required><br>
  
 
 		<button type="submit">Submit</button>
 	</form>
 </div>
 
-<h3> Previous Input (if any) - for verification purposes:</h3>
+</body>
+</html>
+
+<!--<h3> Previous Input (if any) - for verification purposes:</h3>
 <p> Registration Day: <?php echo $prevSelections['prevExpenseDay'] ?> </p>
 <p> Registration Month: <?php echo $prevSelections['prevExpenseMonth'] ?> </p>
 <p> Registration Year: <?php echo $prevSelections['prevExpenseYear'] ?> </p>
 <p> Registration Category: <?php echo $prevSelections['prevExpenseCategory'] ?> </p>
 <p> Registration Amount: <?php echo $prevSelections['prevExpenseAmount'] ?> </p>
 <p> Registration Note: <?php echo $prevSelections['prevExpenseNote'] ?> </p>
-<p> <span class="error"> <?php echo $prevSelections['errorMessage'] ?> </span> </p>
+<p> <span class="error"> <?php echo $prevSelections['errorMessage'] ?> </span> </p>   
 
-</body>
-</html>
+
+
