@@ -69,7 +69,7 @@ The PHP script insertToDb.php will be executed after the user clicks "Submit"-->
 	<form action="insertToDb.php" method="post">
 
 		<label>Employee Name ():</label>
-		<input type="text" step="1" name="employee_name" value="<?php echo $prevExpenseYear;  ?>" required><br>
+		<input type="text" step="1" name="employee_name" value="<?php;  ?>" required><br>
 		
 
 		<!-- Text input for year, remembering previously selected year -->
